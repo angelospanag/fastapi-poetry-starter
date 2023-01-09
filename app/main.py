@@ -37,3 +37,9 @@ async def logger_middleware(request: Request, call_next):
 @app.get("/healthcheck")
 async def healthcheck():
     return Response()
+
+
+@app.get("/")
+async def read_main():
+    logger.info("In root path")
+    return {"msg": "Hello World"}

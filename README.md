@@ -4,13 +4,14 @@ A project starter for personal usage containing the following:
 
 * [Python 3.11.*](https://www.python.org/)
 * [FastAPI](https://fastapi.tiangolo.com/) web framework
-* Structured logging using [structlog](https://www.structlog.org/en/stable/index.html)
-* Dependency management using [Poetry](https://python-poetry.org/)
-* [Python .gitignore](https://github.com/github/gitignore/blob/main/Python.gitignore)
+* Structured logging using [`structlog`](https://www.structlog.org/)
+* Dependency management using [`poetry`](https://python-poetry.org/)
 * Containerisation using a Dockerfile
-* Linting using [ruff](https://github.com/charliermarsh/ruff)
-* Formatting using [black](https://black.readthedocs.io/en/stable/) and [isort](https://pycqa.github.io/isort/)
-
+* Testing with [`pytest`](https://docs.pytest.org/) and optionally with coverage with [`pytest-cov`](https://pytest-cov.readthedocs.io/)
+* Linting using [`ruff`](https://github.com/charliermarsh/ruff)
+* Formatting using [`black`](https://black.readthedocs.io/) and [`isort`](https://pycqa.github.io/isort/)
+* [`.gitignore`](https://github.com/github/gitignore/blob/main/Python.gitignore)
+  
 ## Prerequisites
 * [Python 3.11.*](https://www.python.org/downloads/)
 * [Poetry](https://python-poetry.org/)
@@ -44,12 +45,26 @@ poetry shell
 
 ## Run application
 Runs the FastAPI web application on port `8000` using [uvicorn](https://www.uvicorn.org/):
-
 ```bash
 uvicorn app.main:app --reload
 ```
-## Linting
 
+## Testing
+```bash
+pytest
+```
+
+**With coverage:**
+```bash
+pytest --cov=app
+```
+
+**With coverage and HTML output:**
+```bash
+pytest --cov-report html --cov=app
+```
+
+## Linting
 ```bash
 ruff app/*
 ```
