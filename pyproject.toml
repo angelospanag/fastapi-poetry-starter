@@ -8,7 +8,7 @@ packages = [{ include = "fastapi_poetry_starter" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.89.0"
+fastapi = "^0.89.1"
 uvicorn = { extras = ["standard"], version = "^0.20.0" }
 structlog = "^22.3.0"
 
