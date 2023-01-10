@@ -7,6 +7,8 @@
     - [3. Activate your virtual environment](#3-activate-your-virtual-environment)
   - [Run application](#run-application)
   - [Testing](#testing)
+    - [With coverage](#with-coverage)
+    - [With coverage and HTML output](#with-coverage-and-html-output)
   - [Linting](#linting)
   - [Formatting](#formatting)
   - [Containerisation](#containerisation)
@@ -70,12 +72,12 @@ uvicorn app.main:app --reload
 pytest
 ```
 
-**With coverage:**
+### With coverage
 ```bash
 pytest --cov=app
 ```
 
-**With coverage and HTML output:**
+### With coverage and HTML output
 ```bash
 pytest --cov-report html --cov=app
 ```
