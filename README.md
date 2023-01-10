@@ -23,9 +23,9 @@ A project starter for personal usage containing the following:
 brew install python3 poetry
 ```
 
-**Linux**
+**Ubuntu/Debian**
 ```bash
-sudo apt install python3 python
+sudo apt install python3 python3-venv
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 pipx install poetry
@@ -66,12 +66,12 @@ pytest --cov-report html --cov=app
 
 ## Linting
 ```bash
-ruff app/*
+ruff app/* tests/*
 ```
 
 ## Formatting
 ```bash
-black app/*
+black app/* tests/*
 ```
 
 ## Podman usage
