@@ -13,9 +13,8 @@ uvicorn = { extras = ["standard"], version = "^0.21.1" }
 structlog = "^22.3.0"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.0.259"
-black = "^23.1.0"
-isort = "^5.12.0"
+ruff = "^0.0.260"
+black = "^23.3.0"
 httpx = "^0.23.3"
 pytest = "^7.2.2"
 pytest-cov = "^4.0.0"
@@ -24,14 +23,21 @@ pytest-cov = "^4.0.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.isort]
-profile = "black"
-
 [tool.ruff]
 line-length = 120
+select = [
+    # Pyflakes
+    "F",
+    # Pycodestyle
+    "E",
+    "W",
+    # isort
+    "I001",
+]
 
-# Enable Pyflakes `E` and `F` codes by default.
-select = ["E", "F"]
+# Note: Ruff supports a top-level `src` option in lieu of isort's `src_paths` setting.
+src = ["src", "tests"]
+
 ignore = []
 
 # Exclude a variety of commonly ignored directories.

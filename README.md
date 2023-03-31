@@ -28,8 +28,7 @@ A project starter for personal usage containing the following:
 - Dependency management using [`poetry`](https://python-poetry.org/)
 - Containerisation using a Dockerfile
 - Testing with [`pytest`](https://docs.pytest.org/) and optionally with coverage with [`pytest-cov`](https://pytest-cov.readthedocs.io/)
-- Linting using [`ruff`](https://github.com/charliermarsh/ruff)
-- Formatting using [`black`](https://black.readthedocs.io/) and [`isort`](https://pycqa.github.io/isort/)
+- Linting/formatting using [`ruff`](https://beta.ruff.rs/docs/) and [`black`](https://black.readthedocs.io/)
 - [`.gitignore`](https://github.com/github/gitignore/blob/main/Python.gitignore)
 
 ## Prerequisites
@@ -75,7 +74,7 @@ poetry shell
 Runs the FastAPI web application on port `8000` using [uvicorn](https://www.uvicorn.org/):
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn src.main:app --reload
 ```
 
 ## Testing
