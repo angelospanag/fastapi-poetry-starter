@@ -10,13 +10,13 @@ packages = [{ include = "fastapi_poetry_starter" }]
 python = "^3.11"
 fastapi = "^0.95.0"
 uvicorn = { extras = ["standard"], version = "^0.21.1" }
-structlog = "^22.3.0"
+structlog = "^23.1.0"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.0.260"
+ruff = "^0.0.261"
 black = "^23.3.0"
 httpx = "^0.23.3"
-pytest = "^7.2.2"
+pytest = "^7.3.0"
 pytest-cov = "^4.0.0"
 
 [build-system]
