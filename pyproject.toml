@@ -8,16 +8,16 @@ packages = [{ include = "fastapi_poetry_starter" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.95.1"
-uvicorn = { extras = ["standard"], version = "^0.21.1" }
+fastapi = "^0.100.1"
+uvicorn = { extras = ["standard"], version = "^0.23.2" }
 structlog = "^23.1.0"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.0.261"
-black = "^23.3.0"
-httpx = "^0.23.3"
-pytest = "^7.3.0"
-pytest-cov = "^4.0.0"
+ruff = "^0.0.282"
+black = "^23.7.0"
+httpx = "^0.24.1"
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
 
 [build-system]
 requires = ["poetry-core"]
