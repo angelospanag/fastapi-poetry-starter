@@ -1,23 +1,25 @@
 # fastapi-poetry-starter
 
 <!-- TOC -->
-- [fastapi-poetry-starter](#fastapi-poetry-starter)
-  - [Description](#description)
-  - [Prerequisites](#prerequisites)
-    - [1. Install Python 3 and Poetry](#1-install-python-3-and-poetry)
-    - [2. Create a virtual environment with all necessary dependencies](#2-create-a-virtual-environment-with-all-necessary-dependencies)
-    - [3. Activate your virtual environment](#3-activate-your-virtual-environment)
-  - [Run application](#run-application)
-  - [Testing](#testing)
-    - [With coverage](#with-coverage)
-    - [With coverage and HTML output](#with-coverage-and-html-output)
-  - [Linting](#linting)
-  - [Formatting](#formatting)
-  - [Containerisation](#containerisation)
-    - [1. Build image and tag it as `fastapi-poetry-starter`](#1-build-image-and-tag-it-as-fastapi-poetry-starter)
-    - [2. Run a container of the previously tagged image (`fastapi-poetry-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-poetry-starter)
-    - [3. Check running containers](#3-check-running-containers)
-    - [4. Hit sample endpoint](#4-hit-sample-endpoint)
+
+* [fastapi-poetry-starter](#fastapi-poetry-starter)
+    * [Description](#description)
+    * [Prerequisites](#prerequisites)
+        * [1. Install Python 3 and Poetry](#1-install-python-3-and-poetry)
+        * [2. Create a virtual environment with all necessary dependencies](#2-create-a-virtual-environment-with-all-necessary-dependencies)
+        * [3. Activate your virtual environment](#3-activate-your-virtual-environment)
+    * [Run application](#run-application)
+    * [Testing](#testing)
+        * [With coverage](#with-coverage)
+        * [With coverage and HTML output](#with-coverage-and-html-output)
+    * [Linting](#linting)
+    * [Formatting](#formatting)
+    * [Containerisation](#containerisation)
+        * [1. Build image and tag it as `fastapi-poetry-starter`](#1-build-image-and-tag-it-as-fastapi-poetry-starter)
+        * [2. Run a container of the previously tagged image (`fastapi-poetry-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-poetry-starter)
+        * [3. Check running containers](#3-check-running-containers)
+        * [4. Hit sample endpoint](#4-hit-sample-endpoint)
+
 <!-- TOC -->
 
 ## Description
@@ -76,7 +78,7 @@ poetry shell
 Runs the FastAPI web application on port `8000` using [uvicorn](https://www.uvicorn.org/):
 
 ```bash
-uvicorn src.main:app --reload
+uvicorn fastapi_poetry_starter.main:app --reload
 ```
 
 ## Testing
@@ -100,13 +102,13 @@ pytest --cov-report html --cov=app
 ## Linting
 
 ```bash
-ruff check app/* tests/*
+ruff check fastapi_poetry_starter/* tests/*
 ```
 
 ## Formatting
 
 ```bash
-ruff format app/* tests/*
+ruff format fastapi_poetry_starter/* tests/*
 ```
 
 ## Containerisation

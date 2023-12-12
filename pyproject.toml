@@ -35,7 +35,7 @@ select = [
 ]
 
 # Note: Ruff supports a top-level `src` option in lieu of isort's `src_paths` setting.
-src = ["src", "tests"]
+src = ["fastapi_poetry_starter", "tests"]
 
 ignore = []
 
@@ -61,7 +61,7 @@ exclude = [
     "node_modules",
     "venv",
 ]
-per-file-ignores = {}
+per-file-ignores = { }
 
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
