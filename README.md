@@ -1,41 +1,42 @@
 # fastapi-poetry-starter
 
 <!-- TOC -->
-* [fastapi-poetry-starter](#fastapi-poetry-starter)
-  * [Description](#description)
-  * [Prerequisites](#prerequisites)
-    * [1. Install Python 3 and Poetry](#1-install-python-3-and-poetry)
-    * [2. Create a virtual environment with all necessary dependencies](#2-create-a-virtual-environment-with-all-necessary-dependencies)
-    * [3. Activate your virtual environment](#3-activate-your-virtual-environment)
-  * [Run application](#run-application)
-  * [Testing](#testing)
-    * [With coverage](#with-coverage)
-    * [With coverage and HTML output](#with-coverage-and-html-output)
-  * [Linting](#linting)
-  * [Formatting](#formatting)
-  * [Containerisation](#containerisation)
-    * [1. Build image and tag it as `fastapi-poetry-starter`](#1-build-image-and-tag-it-as-fastapi-poetry-starter)
-    * [2. Run a container of the previously tagged image (`fastapi-poetry-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-poetry-starter)
-    * [3. Check running containers](#3-check-running-containers)
-    * [4. Hit sample endpoint](#4-hit-sample-endpoint)
+- [fastapi-poetry-starter](#fastapi-poetry-starter)
+  - [Description](#description)
+  - [Prerequisites](#prerequisites)
+    - [1. Install Python 3 and Poetry](#1-install-python-3-and-poetry)
+    - [2. Create a virtual environment with all necessary dependencies](#2-create-a-virtual-environment-with-all-necessary-dependencies)
+    - [3. Activate your virtual environment](#3-activate-your-virtual-environment)
+  - [Run application](#run-application)
+  - [Testing](#testing)
+    - [With coverage](#with-coverage)
+    - [With coverage and HTML output](#with-coverage-and-html-output)
+  - [Linting](#linting)
+  - [Formatting](#formatting)
+  - [Containerisation](#containerisation)
+    - [1. Build image and tag it as `fastapi-poetry-starter`](#1-build-image-and-tag-it-as-fastapi-poetry-starter)
+    - [2. Run a container of the previously tagged image (`fastapi-poetry-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-poetry-starter)
+    - [3. Check running containers](#3-check-running-containers)
+    - [4. Hit sample endpoint](#4-hit-sample-endpoint)
 <!-- TOC -->
 
 ## Description
 
 A project starter for personal usage containing the following:
 
-- [Python 3.11.\*](https://www.python.org/)
+- [Python 3.12.\*](https://www.python.org/)
 - [FastAPI](https://fastapi.tiangolo.com/) web framework
 - Structured logging using [`structlog`](https://www.structlog.org/)
 - Dependency management using [`poetry`](https://python-poetry.org/)
 - Containerisation using a Dockerfile
-- Testing with [`pytest`](https://docs.pytest.org/) and optionally with coverage with [`pytest-cov`](https://pytest-cov.readthedocs.io/)
-- Linting/formatting using [`ruff`](https://beta.ruff.rs/docs/) and [`black`](https://black.readthedocs.io/)
+- Testing with [`pytest`](https://docs.pytest.org/) and optionally with coverage
+  with [`pytest-cov`](https://pytest-cov.readthedocs.io/)
+- Linting/formatting using [`ruff`](https://beta.ruff.rs/docs/)
 - [`.gitignore`](https://github.com/github/gitignore/blob/main/Python.gitignore)
 
 ## Prerequisites
 
-- [Python 3.11.\*](https://www.python.org/downloads/)
+- [Python 3.12.\*](https://www.python.org/downloads/)
 - [Poetry](https://python-poetry.org/)
 
 ### 1. Install Python 3 and Poetry
@@ -49,9 +50,8 @@ brew install python3 poetry
 **Ubuntu/Debian**
 
 ```bash
-sudo apt install python3 python3-venv
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
+sudo apt install python3 python3-venv pipx
+pipx ensurepath
 pipx install poetry
 ```
 
@@ -100,13 +100,13 @@ pytest --cov-report html --cov=app
 ## Linting
 
 ```bash
-ruff app/* tests/*
+ruff check app/* tests/*
 ```
 
 ## Formatting
 
 ```bash
-black app/* tests/*
+ruff format app/* tests/*
 ```
 
 ## Containerisation

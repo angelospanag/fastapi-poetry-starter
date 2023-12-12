@@ -7,16 +7,15 @@ readme = "README.md"
 packages = [{ include = "fastapi_poetry_starter" }]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-fastapi = "^0.100.1"
-uvicorn = { extras = ["standard"], version = "^0.23.2" }
-structlog = "^23.1.0"
+python = "^3.12"
+fastapi = "^0.105.0"
+structlog = "^23.2.0"
+uvicorn = { extras = ["standard"], version = "^0.24.0.post1" }
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.0.282"
-black = "^23.7.0"
-httpx = "^0.24.1"
-pytest = "^7.4.0"
+ruff = "^0.1.7"
+httpx = "^0.25.2"
+pytest = "^7.4.3"
 pytest-cov = "^4.1.0"
 
 [build-system]
