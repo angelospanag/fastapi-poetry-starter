@@ -8,13 +8,13 @@ packages = [{ include = "fastapi_poetry_starter" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-fastapi = "^0.105.0"
+fastapi = "^0.108.0"
 structlog = "^23.2.0"
-uvicorn = { extras = ["standard"], version = "^0.24.0.post1" }
+uvicorn = { extras = ["standard"], version = "^0.25.0" }
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.1.8"
-httpx = "^0.25.2"
+ruff = "^0.1.9"
+httpx = "^0.26.0"
 pytest = "^7.4.3"
 pytest-cov = "^4.1.0"
 
@@ -66,8 +66,8 @@ per-file-ignores = { }
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-# Assume Python 3.11.
-target-version = "py311"
+# Assume Python 3.12.
+target-version = "py312"
 
 [tool.ruff.mccabe]
 # Unlike Flake8, default to a complexity level of 10.
