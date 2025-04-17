@@ -1,5 +1,7 @@
 # fastapi-poetry-starter
 
+A starter project using Python, FastAPI and uv.
+
 <!-- TOC -->
 
 - [fastapi-poetry-starter](#fastapi-poetry-starter)
