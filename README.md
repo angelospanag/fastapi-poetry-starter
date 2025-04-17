@@ -53,7 +53,9 @@ brew install python@3.13 uv
 **Ubuntu/Debian**
 
 ```bash
-sudo apt install python3 python3-venv
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.13
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
