@@ -1,7 +1,7 @@
 [project]
 name = "fastapi-uv-starter"
 version = "0.1.0"
-description = "Add your description here"
+description = "A starter project using Python, FastAPI and uv"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = ["fastapi[standard]>=0.115.12", "structlog>=25.2.0"]
