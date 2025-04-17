@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: fastapi-poetry-starter
+  name: fastapi-uv-starter
 spec:
   selector:
-    app: fastapi-poetry-starter
+    app: fastapi-uv-starter
   ports:
   - protocol: "TCP"
     port: 8000
@@ -15,20 +15,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fastapi-poetry-starter
+  name: fastapi-uv-starter
 spec:
   selector:
     matchLabels:
-      app: fastapi-poetry-starter
+      app: fastapi-uv-starter
   replicas: 4
   template:
     metadata:
       labels:
-        app: fastapi-poetry-starter
+        app: fastapi-uv-starter
     spec:
       containers:
-      - name: fastapi-poetry-starter
-        image: fastapi-poetry-starter:latest
+      - name: fastapi-uv-starter
+        image: fastapi-uv-starter:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 80

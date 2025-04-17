@@ -1,8 +1,9 @@
 from http import HTTPStatus
 
 from fastapi.testclient import TestClient
-from fastapi_poetry_starter.main import app
 from structlog.testing import capture_logs
+
+from app.main import app
 
 client = TestClient(app)
 

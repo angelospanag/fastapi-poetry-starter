@@ -2,23 +2,22 @@
 
 <!-- TOC -->
 
-* [fastapi-poetry-starter](#fastapi-poetry-starter)
-    * [Description](#description)
-    * [Prerequisites](#prerequisites)
-        * [1. Install Python 3 and Poetry](#1-install-python-3-and-poetry)
-        * [2. Create a virtual environment with all necessary dependencies](#2-create-a-virtual-environment-with-all-necessary-dependencies)
-        * [3. Activate your virtual environment](#3-activate-your-virtual-environment)
-    * [Run application](#run-application)
-    * [Testing](#testing)
-        * [With coverage](#with-coverage)
-        * [With coverage and HTML output](#with-coverage-and-html-output)
-    * [Linting](#linting)
-    * [Formatting](#formatting)
-    * [Containerisation](#containerisation)
-        * [1. Build image and tag it as `fastapi-poetry-starter`](#1-build-image-and-tag-it-as-fastapi-poetry-starter)
-        * [2. Run a container of the previously tagged image (`fastapi-poetry-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-poetry-starter)
-        * [3. Check running containers](#3-check-running-containers)
-        * [4. Hit sample endpoint](#4-hit-sample-endpoint)
+- [fastapi-poetry-starter](#fastapi-poetry-starter)
+  - [Description](#description)
+  - [Prerequisites](#prerequisites)
+    - [1. Install Python 3 and uv](#1-install-python-3-and-uv)
+    - [2. Create a virtual environment with all necessary dependencies](#2-create-a-virtual-environment-with-all-necessary-dependencies)
+  - [Run application](#run-application)
+    - [Development mode](#development-mode)
+    - [Production mode](#production-mode)
+  - [Testing](#testing)
+    - [With coverage](#with-coverage)
+    - [With coverage and HTML output](#with-coverage-and-html-output)
+  - [Linting](#linting)
+  - [Formatting](#formatting)
+    - [2. Run a container of the previously tagged image (`fastapi-uv-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-uv-starter)
+    - [3. Check running containers](#3-check-running-containers)
+    - [4. Hit sample endpoint](#4-hit-sample-endpoint)
 
 <!-- TOC -->
 
@@ -26,10 +25,10 @@
 
 A project starter for personal usage containing the following:
 
-- [Python 3.12.\*](https://www.python.org/)
+- [Python 3.13.\*](https://www.python.org/)
 - [FastAPI](https://fastapi.tiangolo.com/) web framework
 - Structured logging using [`structlog`](https://www.structlog.org/)
-- Dependency management using [`poetry`](https://python-poetry.org/)
+- Dependency management using [`uv`](https://docs.astral.sh/uv/)
 - Containerisation using a Dockerfile
 - Testing with [`pytest`](https://docs.pytest.org/) and optionally with coverage
   with [`pytest-cov`](https://pytest-cov.readthedocs.io/)
@@ -38,23 +37,22 @@ A project starter for personal usage containing the following:
 
 ## Prerequisites
 
-- [Python 3.12.\*](https://www.python.org/downloads/)
-- [Poetry](https://python-poetry.org/)
+- [Python 3.13.\*](https://www.python.org/downloads/)
+- [uv](https://docs.astral.sh/uv/)
 
-### 1. Install Python 3 and Poetry
+### 1. Install Python 3 and uv
 
 **MacOS (using `brew`)**
 
 ```bash
-brew install python3 poetry
+brew install python@3.13 uv
 ```
 
 **Ubuntu/Debian**
 
 ```bash
-sudo apt install python3 python3-venv pipx
-pipx ensurepath
-pipx install poetry
+sudo apt install python3 python3-venv
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### 2. Create a virtual environment with all necessary dependencies
@@ -62,71 +60,68 @@ pipx install poetry
 From the root of the project execute:
 
 ```bash
-poetry install
-```
-
-### 3. Activate your virtual environment
-
-From the root of the project execute:
-
-```bash
-poetry shell
+uv sync
 ```
 
 ## Run application
 
-Runs the FastAPI web application on port `8000` using [uvicorn](https://www.uvicorn.org/):
+### Development mode
 
 ```bash
-uvicorn fastapi_poetry_starter.main:app --reload
+uv run fastapi dev
+```
+
+### Production mode
+
+```bash
+uv run fastapi run
 ```
 
 ## Testing
 
 ```bash
-pytest
+uv run pytest
 ```
 
 ### With coverage
 
 ```bash
-pytest --cov=app
+uv run pytest --cov=app
 ```
 
 ### With coverage and HTML output
 
 ```bash
-pytest --cov-report html --cov=app
+uv run pytest --cov-report html --cov=app
 ```
 
 ## Linting
 
 ```bash
-ruff check fastapi_poetry_starter/* tests/*
+uv run ruff check app/* tests/*
 ```
 
 ## Formatting
 
-```bash
-ruff format fastapi_poetry_starter/* tests/*
-```
+````bash
+uv run ruff format app/* tests/*
 
 ## Containerisation
 
 The following `podman` commands are direct replacements of the Docker CLI. You can see that their syntax is identical:
 
-### 1. Build image and tag it as `fastapi-poetry-starter`
+### 1. Build image and tag it as `fastapi-uv-starter`
 
 ```bash
-podman image build -t fastapi-poetry-starter .
-```
+podman image build -t fastapi-uv-starter .
+````
 
-### 2. Run a container of the previously tagged image (`fastapi-poetry-starter`)
+### 2. Run a container of the previously tagged image (`fastapi-uv-starter`)
 
 Run our FastAPI application and map our local port `8000` to `80` on the running container:
 
 ```bash
-podman container run -d --name fastapi-poetry-starter -p 8000:80 --network bridge fastapi-poetry-starter
+podman container run -d --name fastapi-uv-starter -p 8000:80 --network bridge fastapi-uv-starter
 ```
 
 ### 3. Check running containers
@@ -137,7 +132,7 @@ podman ps
 
 ```bash
 CONTAINER ID  IMAGE                            COMMAND               CREATED         STATUS             PORTS                 NAMES
-78586e5b4683  localhost/fastapi-poetry-starter:latest  uvicorn main:app ...  13 minutes ago  Up 5 minutes ago  0.0.0.0:8000->80/tcp  nifty_roentgen
+78586e5b4683  localhost/fastapi-uv-starter:latest  uvicorn main:app ...  13 minutes ago  Up 5 minutes ago  0.0.0.0:8000->80/tcp  nifty_roentgen
 ```
 
 ### 4. Hit sample endpoint
