@@ -149,7 +149,7 @@ standard = [
 ]
 
 [[package]]
-name = "fastapi-poetry-starter"
+name = "fastapi-uv-starter"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
