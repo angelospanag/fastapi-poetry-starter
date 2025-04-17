@@ -1,10 +1,10 @@
-# fastapi-poetry-starter
+# fastapi-uv-starter
 
 A starter project using Python, FastAPI and uv.
 
 <!-- TOC -->
 
-- [fastapi-poetry-starter](#fastapi-poetry-starter)
+- [fastapi-uv-starter](#fastapi-uv-starter)
   - [Description](#description)
   - [Prerequisites](#prerequisites)
     - [1. Install Python 3 and uv](#1-install-python-3-and-uv)
