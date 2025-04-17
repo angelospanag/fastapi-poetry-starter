@@ -17,6 +17,8 @@ A starter project using Python, FastAPI and uv.
     - [With coverage and HTML output](#with-coverage-and-html-output)
   - [Linting](#linting)
   - [Formatting](#formatting)
+  - [Containerisation](#containerisation)
+    - [1. Build image and tag it as `fastapi-uv-starter`](#1-build-image-and-tag-it-as-fastapi-uv-starter)
     - [2. Run a container of the previously tagged image (`fastapi-uv-starter`)](#2-run-a-container-of-the-previously-tagged-image-fastapi-uv-starter)
     - [3. Check running containers](#3-check-running-containers)
     - [4. Hit sample endpoint](#4-hit-sample-endpoint)
@@ -107,8 +109,9 @@ uv run ruff check app/* tests/*
 
 ## Formatting
 
-````bash
+```bash
 uv run ruff format app/* tests/*
+```
 
 ## Containerisation
 
@@ -118,7 +121,7 @@ The following `podman` commands are direct replacements of the Docker CLI. You c
 
 ```bash
 podman image build -t fastapi-uv-starter .
-````
+```
 
 ### 2. Run a container of the previously tagged image (`fastapi-uv-starter`)
 
